@@ -10,7 +10,7 @@ public class RandomEx1 {
             if (num1 + num2 == 12){
                 System.out.println("무인도를 탈출합니다.");
                 break;
-                
+
             }
             System.out.println("주사위의 합은 :" + (num1 + num2) +" 입니다. ");
 
