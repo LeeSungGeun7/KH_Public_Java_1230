@@ -20,7 +20,7 @@ public class ArraySort {
 
         }
 
-        for(int e : arr) System.out.print(e + " ");
+//        for(int e : arr) System.out.print(e + " ");
         System.out.println(Arrays.toString(arr));
 
 
