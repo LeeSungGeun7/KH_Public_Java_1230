@@ -6,8 +6,8 @@ public class NN {
 
         for (int i = 0; i < 3; i++) {
             System.out.println();
-            for(int j =1 ; j< 4; j++)
-                System.out.print(c);
+            for(int j =1 ; j< 9; j++)
+                System.out.print(j);
                 c++;
         }
 
