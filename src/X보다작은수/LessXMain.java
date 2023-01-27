@@ -1,5 +1,7 @@
 package X보다작은수;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 // 첫째줄에 N과 X가 주어짐
@@ -10,20 +12,26 @@ import java.util.Scanner;
 // 결과 값 : 1 4 2 3
 public class LessXMain {
     public static void main(String[] args) {
+
+        ArrayList<Integer> arr = new ArrayList<>();
+
+
         Scanner sc = new Scanner(System.in);
         System.out.print("배열의 개수 입력 (1~10000) : ");
-        int[] arr = new int[sc.nextInt()];
+        arr.add(sc.nextInt());
         System.out.print("찾을수 입력 (1~10000) : ");
         int min = sc.nextInt();
-        if (arr.length >= 1 && arr.length <= 10000)
+        if (arr.size() >= 1 && arr.size() <= 10000)
             if (min >= 1 && min <= 10000) {
-                for (int i = 0; i < arr.length; i++) {
-                    arr[i] = sc.nextInt(); //주어진 n 만큼의 수를 입력받음
-                    if (arr[i] < min) {
-                        System.out.print(arr[i] + " ");
+                for (int i = 0; i < arr.size(); i++) {
+                    arr.add(i,sc.nextInt()); //주어진 n 만큼의 수를 입력받음
+                    if (arr.get(i) < min) {
+                        System.out.print(arr.get(i) + " ");
                     }
                 }
                 System.out.println();
             }
+
+
         }
     }
