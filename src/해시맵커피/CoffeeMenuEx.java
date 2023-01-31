@@ -3,6 +3,7 @@ package 해시맵커피;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 // HashMap ? 키와 값의 Pair 로 구성된 형태
 // 동일여부 판단을 HashCode 를 통해서 함.
 // 키는 중복 허용을 하지 않음 , 단 값을 중복 허용을 함
@@ -10,8 +11,10 @@ import java.util.Scanner;
 
 
 public class CoffeeMenuEx {
-    Map<String, MenuInfo> map = new HashMap<>();
+    HashMap<String, MenuInfo> map = new HashMap<>();
+
     public static void main(String[] args) {
+
         CoffeeMenuEx coffee = new CoffeeMenuEx();
         coffee.makeMenu();
         coffee.selectMenu();
@@ -22,6 +25,12 @@ public class CoffeeMenuEx {
         map.put("Americano", new MenuInfo("Americano",2500,"Coffee","기본 커피 입니다."));
         map.put("Espresso", new MenuInfo("Espresso",2500,"Coffee","진한 커피 입니다."));
         map.put("Latte",new MenuInfo("Latte",4000,"Coffee","우유가 들어갔어요."));
+        map.put("ColdBrew",new MenuInfo("ColdBrew",5500,"Coffee","비싼커피 들어갔어요."));
+        map.put("LemonAde",new MenuInfo("LemonAde",5000,"Ade","레몬이 들어갔어요."));
+        map.put("PeachAde",new MenuInfo("PeachAde",5800,"Ade","복숭아가 들어갔어요."));
+        map.put("BlackTea",new MenuInfo("BlackTea",5800,"Tea"," 홍차입니다."));
+        map.put("GreenTea",new MenuInfo("GreenTea",5300,"Tea","녹차"));
+        map.put("MilkTea",new MenuInfo("MilkTea",4000,"Coffee","우유가 들어갔어요."));
     }
     void selectMenu(){
         Scanner sc = new Scanner(System.in);

@@ -1,6 +1,8 @@
 package 해시맵커피;
 
-public class MenuInfo {
+import java.util.Comparator;
+
+public class MenuInfo  {
     String name;  // 메뉴 이름
     int price;    // 메뉴 가격
     String group; // 메뉴 카테고리
@@ -11,6 +13,16 @@ public class MenuInfo {
         this.price = price;
         this.group = group;
         this.desc = desc;
+    }
+
+
+
+}
+class SortMenu implements Comparator<MenuInfo>{
+
+    @Override
+    public int compare(MenuInfo o1, MenuInfo o2) {
+        return o1.price -= o2.price;
     }
 }
 //enum MenuName{
