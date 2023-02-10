@@ -9,9 +9,9 @@ public class NetworkEx2Client {
 
         Socket socket = null;
         try {
-            socket = new Socket();
+            socket = new Socket(); // 소켓생성
             System.out.println("[연결 요청]");
-            socket.connect(new InetSocketAddress("localhost", 5001));
+            socket.connect(new InetSocketAddress("localhost", 5001)); //서버에 연결요청
             System.out.println("[연결 성공]");
         } catch (Exception e) {}
         if(!socket.isClosed()){
