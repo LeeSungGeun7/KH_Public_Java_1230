@@ -6,16 +6,14 @@ package 명함전송서버;
 // 4. 클라이언트에서 명함을 수신하면 출력하기
 
 
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.*;
 
 public class NameCardServer {
-    static List<NameCard> list = new ArrayList<>();
-
+    public static List<NameCard> list = new ArrayList<>();
+    Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         ServerSocket serverSocket = null;
         int port = 5433;
@@ -29,10 +27,16 @@ public class NameCardServer {
                 System.out.println("[클라이언트 : ]" + socket.getRemoteSocketAddress());
                 System.out.print("전송하시겠습니까? Yes or No");
                 String confirm = sc.next();
+                System.out.print("전송할 파일을 지정하세요: ");
+                String originalFileName = sc.next();   // 파일경로/파일이름
+                OutputStream is = new FileOutputStream(originalFileName);
+                System.out.print("저장경로를 지정하세요: ");
+                String filePath = sc.next(); //저장경로
+
                 if (confirm.equalsIgnoreCase("yes")) {
-                    OutputStream outputStream = socket.getOutputStream();
-                    ObjectOutputStream oos = new ObjectOutputStream(outputStream);
-                    oos.writeObject(writeNameCard());
+
+                    ObjectOutputStream oos = new ObjectOutputStream(is);
+                    oos.writeObject(originalFileName);
                     oos.flush();
                     oos.close();
                 }
@@ -49,14 +53,5 @@ public class NameCardServer {
 
     }
 
-    static List<NameCard> writeNameCard() {
-        list.add(new NameCard("", "010-5006-1234", "", ""));
-        list.add(new NameCard("", "010-5006-1234", "", ""));
-        list.add(new NameCard("", "010-5006-1234", "", ""));
-        list.add(new NameCard("", "010-5006-1234", "", ""));
-        list.add(new NameCard("", "010-5006-1234", "", ""));
-        list.add(new NameCard("", "010-5006-1234", "", ""));
-        return list;
-    }
 
 }

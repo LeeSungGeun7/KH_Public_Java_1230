@@ -25,8 +25,8 @@ public class ClassSortEx  {
             hs.put(sc.next(),new Student(sc.nextInt()));
         }
         for(int i = 0 ; i< N ; i++){
-            System.out.println(hs.keySet());
-            System.out.println(hs.values());
+            System.out.println(hs.keySet().iterator().next());
+
         }
 
 

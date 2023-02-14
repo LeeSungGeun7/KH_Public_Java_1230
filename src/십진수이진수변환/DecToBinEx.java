@@ -9,9 +9,9 @@ public class DecToBinEx {
         System.out.println("십진수 입력 : ");
         int val = sc.nextInt();
         val = decToBin(val);
-        System.out.println("이진수 : ");
+        System.out.println("이진수 : "+val);
         val = binToDec(val);
-        System.out.println("십진수 : ");
+        System.out.println("십진수 : "+val);
     }
     static int decToBin(int dec) {
         int bin ; //계산으로 만들어진 이진수
